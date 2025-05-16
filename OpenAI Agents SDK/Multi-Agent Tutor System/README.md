@@ -16,27 +16,34 @@
 
 ---
 
-## 🏗️ Architecture Overview
+## 🧠 Architecture Overview
 
-             +-------------------+
-             |   User Input      |
-             +---------+---------+
-                       |
-             +---------v----------+
-             |    Triage Agent    |
-             |  (Intent Router)   |
-             +----+--+--+--+------+
-                  |  |  |  |
-    +-------------+  |  |  +----------------+
-    |                |  |                   |
-+-------v------+ +-------v------+ +-------v---------+
-| Physics Agent| | Biology Agent| | GeneralKnowledge|
-+--------------+ +--------------+ +-----------------+
-|
-+-----------------+
-| Quiz Generator |
-+-----------------+
-
+```text
++-------------------+
+|    User Input     |
++---------+---------+
+          |
+          v
++-----------------------+
+|     Triage Agent      |
+|   (Intent Router)     |
++----+----+-----+-------+
+     |    |     |
+     |    |     |
+     |    |     +----------------------------+
+     |    |                                  |
+     |    +----------------------+           |
+     |                           |           |
+     v                           v           v
++-------------+         +---------------+  +-----------------------+
+| Physics Agent|         | Biology Agent |  | General Knowledge Agent |
++-------------+         +---------------+  +-----------------------+
+     |
+     v
++----------------+
+|  Quiz Agent    |
++----------------+
+```
 
 
 ---
@@ -45,24 +52,24 @@
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/abbasshafi/AgenticAI-Projects.git
+git clone https://github.com/abbasshafi/AgenticAI-Projects/tree/main/OpenAI%20Agents%20SDK/Multi-Agent%20Tutor%20System
 cd conceptbuddy
 
-2. Activate UV:
+2. **Activate UV**
 ```bash
 uv init
 uv venv
 ./activate
 
-Install dependencies:
+**Install dependencies**
 ```bash
 uv run openai-agents
 uv run chainlit
 
-3. Configure Gemini Api Key:
+3. **Configure Gemini Api Key**
 ```bash
 GEMINI_API_KEY=your_actual_api_key_here
 
-4. Run the Chainlit app
+4. **Run the Chainlit app**
 ```bash
 uv run chainlit run tutor_agent.py

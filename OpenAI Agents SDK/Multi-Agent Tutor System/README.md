@@ -54,22 +54,27 @@
 ```bash
 git clone https://github.com/abbasshafi/AgenticAI-Projects/tree/main/OpenAI%20Agents%20SDK/Multi-Agent%20Tutor%20System
 cd conceptbuddy
+```
 
 2. **Activate UV**
 ```bash
 uv init
 uv venv
-./activate
+.venv\Scripts\activate
+```
 
-**Install dependencies**
+3. **Install dependencies**
 ```bash
 uv run openai-agents
 uv run chainlit
+```
 
-3. **Configure Gemini Api Key**
+4. **Configure Gemini Api Key in .env file**
 ```bash
 GEMINI_API_KEY=your_actual_api_key_here
+```
 
-4. **Run the Chainlit app**
+5. **Run the Chainlit app**
 ```bash
 uv run chainlit run tutor_agent.py
+```
